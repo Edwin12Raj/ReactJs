@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Document</title>
+    <style>
+        /* Basic CSS for UI consistency */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            margin: 10px 0;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <!-- React and ReactDOM CDN links -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- React Code -->
+    <script>
+        // React.createElement example
+
+        // Main heading (H1)
+        const heading = React.createElement('h1', null, 'Welcome to My React Page');
+
+        // First div with a paragraph
+        const firstDiv = React.createElement('div', { className: 'container' },
+            React.createElement('p', null, 'This is the first paragraph inside the first div.')
+        );
+
+        // Second div with a paragraph and anchor tag
+        const secondDiv = React.createElement('div', { className: 'container' },
+            React.createElement('p', null, 'Here is a paragraph with an anchor tag.'),
+            React.createElement('p', null, 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo voluptate, totam asperiores obcaecati excepturi mollitia perferendis. Eligendi minus aspernatur reiciendis magni at est recusandae molestias? Dolorum, cumque. Quidem, ipsam vitae Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit provident, quis sint alias iusto suscipit et eaque cupiditate distinctio neque debitis odit incidunt similique aspernatur voluptates voluptatem ullam nemo est.'),
+            React.createElement('a', { href: 'https://www.example.com', target: '_blank' }, 'Click here to read more')
+        );
+
+        // Last div with a paragraph
+        const lastDiv = React.createElement('div', { className: 'container' },
+            React.createElement('p', null, 'This is the final paragraph inside the last div.')
+        );
+
+        // Root component containing all elements
+        const app = React.createElement('div', null, heading, firstDiv, secondDiv, lastDiv);
+
+        // Rendering the React elements into the DOM
+        ReactDOM.render(app, document.getElementById('root'));
+    </script>
+
+</body>
+</html>
+
